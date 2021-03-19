@@ -1,0 +1,14 @@
+Upspin-webdav serves the upspin name space over WebDAV to localhost.
+
+Some caveats:
+
+- On macOS Big Sur arm64 the kernel panics on renames. Amd64
+  and iOS don't seem to have this problem.
+
+- On Windows it looks like one has to edit some registry keys
+  to allow it to connect to a non-https server even on localhost,
+  but I could have just been holding it wrong.
+
+It's certainly no replacement for FUSE+upspinfs. Still, WebDAV might
+be useful when one cannot load kernel modules for FUSE, or in order
+to sync files with devices that only support WebDAV.
